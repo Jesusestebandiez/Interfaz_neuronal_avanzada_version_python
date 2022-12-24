@@ -64,3 +64,8 @@ test_loss,test_accurancy = model.evaluate(
 )
 
 print("Resultado en las pruebas:",test_accurancy)
+
+for test_images, test_labels in test_dataset.take(1):
+    test_images = test_images.numpy()
+    test_images = test_labels.numpy()
+    predictions = model.predict(test_images)
